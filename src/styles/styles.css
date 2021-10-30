@@ -1,0 +1,329 @@
+@font-face {
+    font-family: Evogria;
+    src: url(fonts/Evogria.otf);
+    /*font-weight: bold;*/
+}
+
+@font-face {
+    font-family: Russo;
+    src: url(fonts/RussoOne-Regular.ttf);
+    /*font-weight: bold;*/
+}
+
+:root {
+    --bkg-color: rgb(44, 50, 60);
+    --test: rgb(148, 148, 148);
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bkg-color);
+}
+
+.react-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.gameBkg {
+    background-color: var(--bkg-color);
+}
+
+.BS_Bkg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 5rem;
+    color: white;
+    background-color: var(--bkg-color);
+}
+
+.splash {
+    position: absolute;
+    width: 70vmin;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate(0, -10vmin);
+}
+
+.GS_GameButton {
+    width: 30vmin;
+    height: 6vmin;
+    line-height: 6vmin;
+    color: white;
+    font-size: 4vmin;
+    font-family: Russo;
+    background-color: rgb(40, 75, 104);
+    border-radius: 0.5rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border: white 2px solid;
+    transition: background-color 0.5s;
+}
+
+.GS_GameButton:hover {
+    background-color: coral;
+}
+
+.exitButton {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: calc(7vmin + 2rem);
+    cursor: pointer;
+}
+
+.GS_Bkg {
+    width: 10rem;
+    height: 30rem;
+    font-size: 5rem;
+    color: white;
+    background-color: rgb(255, 123, 46);
+}
+
+.ES_Bkg {
+    width: 10rem;
+    height: 30rem;
+    font-size: 5rem;
+    color: white;
+    background-color: rgb(68, 141, 46);
+}
+
+.gvContainer {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.gvCellContainer {
+    left: 0;
+    right: 0;
+    margin-top: 2vmin;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-column-gap: 0.5vmin;
+    grid-row-gap: 0.5vmin;
+    padding: 0.5vmin;
+    /*width: 60vmin;
+    height: 60vmin;*/
+    background-color: rgb(38, 46, 65);
+}
+
+.levelScoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.levelClass {
+    color: rgb(107, 166, 221);
+    font-size: 4vmin;
+    width: 40%;
+    text-align: center;
+    font-family: Russo;
+}
+
+.messageClass {
+    color: white;
+    font-size: 4vmin;
+    text-align: center;
+    font-family: Russo;
+    padding: 1vmin;
+}
+
+.clockClass {
+    color: white;
+    font-size: 6vmin;
+    text-align: center;
+    font-family: Russo;
+}
+
+/*@media only screen and (max-width: 400px) {
+    .levelClass {
+        font-size: 1rem;
+    }
+    .messageClass {
+        font-size: 1rem;
+    }
+    .clockClass {
+        font-size: 2rem;
+    }
+  }*/
+
+.cell {
+    position: relative;
+    border: rgb(46, 112, 255) 1px solid;
+}
+
+.cellEmpty {
+    background-color: rgb(34, 35, 36);
+}
+
+.cellFull {
+    background-color: rgb(28, 112, 20);
+}
+
+.cellFullUnopened {
+    background-color: rgb(64, 80, 63);
+    border: rgb(255, 46, 46) 2px solid;
+}
+
+.cellError {
+    background-color: rgb(255, 0, 0);
+}
+
+.cell_Img {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.cellCursor {
+    cursor: pointer;
+}
+
+.headerContainer {
+    background-color: rgb(32, 40, 44);
+}
+
+.messagePopup {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 7vmin;
+    width: 100%;
+    color: white;
+    font-size: 3vmin;
+    font-family: Russo;
+    line-height: 7vmin;
+    text-align: center;
+}
+
+.bkgGreen {
+    background-color: rgba(93, 146, 72, 0.7);
+    border-top: 2px solid rgb(0, 161, 35);
+    border-bottom: 2px solid rgb(0, 161, 35);
+}
+
+.bkgRed {
+    background-color: rgba(220, 20, 60, 0.6);
+    border-top: 2px solid rgb(255, 55, 48);
+    border-bottom: 2px solid rgb(255, 55, 48);
+}
+
+.selectLevelButton {
+    position: absolute;
+    margin-top: 3vmin;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 65%;
+    width: 50vmin;
+    height: 6vmin;
+    line-height: 6vmin;
+    color: white;
+    font-size: 5vmin;
+    font-family: Russo;
+    background-color: rgb(58, 115, 161);
+    border-radius: 0.5rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border: white 2px solid;
+    transition: background-color 0.5s;
+}
+
+.selectLevelButton:hover {
+    background-color: coral;
+}
+
+.menuButton {
+    width: 30vmin;
+    height: 6vmin;
+    line-height: 6vmin;
+    color: white;
+    font-size: 4vmin;
+    font-family: Russo;
+    background-color: rgb(40, 75, 104);
+    border-radius: 0.5rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border: white 2px solid;
+    transition: background-color 0.5s;
+}
+
+.menuButtonsContainer {
+    position: absolute;
+    margin-top: 3vmin;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 22vh;
+    width: calc(30vmin + 20px);
+    height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+    background-color: var(--bkg-color);
+    box-sizing: content-box;
+    border-radius: 1rem;
+    border: 3px solid #6b798a;
+}
+
+.menuButtonsContainer::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+
+.menuButtonsContainer::-webkit-scrollbar-track {
+    background: #4e5761;
+}
+
+/* Handle */
+
+.menuButtonsContainer::-webkit-scrollbar-thumb {
+    background: rgb(55, 63, 71);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.menuButtonsContainer::-webkit-scrollbar-thumb:hover {
+    background: rgb(36, 54, 66);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
